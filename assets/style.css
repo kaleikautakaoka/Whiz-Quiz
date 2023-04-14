@@ -1,9 +1,17 @@
-body {
-    margin: 0%;
-    padding: 0%;
-    background-image: url(/assets/images/kidcomp.jpg);
-    text-align: center;
+.body {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
+
+.ms-5 {
+    margin-left: 50px !important;
+  }
+
+  .ms-auto {
+    margin-left:  !important;
+  }
+
 
 h1 {
     text-decoration: none;
@@ -15,6 +23,10 @@ p {
     font-size: large;
     font-weight: 800;
 }
+
+.text-center {
+    text-align: center !important;
+  }
 
 .timer {
     font-size: large;

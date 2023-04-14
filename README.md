@@ -17,7 +17,7 @@ THEN I can save my initials and my score
 
 ## Deployment
 
-- [https://kaleikautakaoka.github.io/Virtual-Me/](https://kaleikautakaoka.github.io/Virtual-Me/)
+- [https://kaleikautakaoka.github.io/Whiz-Quiz/](https://kaleikautakaoka.github.io/Whiz-Quiz/)
 
 ## Demo/Screenshot
 
@@ -26,13 +26,13 @@ THEN I can save my initials and my score
 <td>Whiz Quiz</td>
 </tr>
 <tr>
-<td><img src="./assets/images/AB3.png" alt="screenshot of webpage"></td>
+<td><img src="./assets/images/Screenshot 2023-04-13 210905.png" alt="screenshot of webpage"></td>
 </tr>
 </table>
 
 ## Technologies
 
-HTML, CSS, Javascript
+HTML, CSS, Javascript, Bootstrap
 
 ## License
 
@@ -56,5 +56,5 @@ Email: sasasa@gmail.com
 ## Author
 
 Author: Sachi Takaoka
-GitHub: <https://github.com/kaleikautakaoka>
+GitHub: <https://github.com/kaleikautakaoka/Whiz-Quiz>
 
