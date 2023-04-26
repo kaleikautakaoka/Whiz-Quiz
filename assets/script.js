@@ -84,15 +84,18 @@ $(document).on("click", "input", function (event) {
 
   console.log(userChoice)
   console.log(event.target)
-  if (userChoice == questionObject[index].answer) {
-    console.log("correct!");
-    $(".tally").html("Correct!");
-    iterateQuestion()
-  } else {
-    console.log("incorrect");
-    $(".tally").html("Wrong");
-    timeRemaining -= 20
-    iterateQuestion()
+  if (index < questionObject.length) {
+    
+    if (userChoice == questionObject[index].answer) {
+      console.log("correct!");
+      $(".tally").html("Correct!");
+      iterateQuestion()
+    } else {
+      console.log("incorrect");
+      $(".tally").html("Wrong");
+      timeRemaining -= 20
+      iterateQuestion()
+    }
   }
   
   
@@ -120,9 +123,9 @@ function quizComplete() {
       <h2>Your Name</h2>
       <form method="POST">
       <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+      <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="userName">
       <span id="userName" class="input-group-text"></span>
-      <input type="text" class="form-control" placeholder="Score" aria-label="Server">
+      <input type="text" class="form-control" placeholder="Score" aria-label="Server"  id="score">
       <span id="score" class="input-group-text"></span>
       </div>
       <div id="displayPastScores"></div>
@@ -132,4 +135,33 @@ function quizComplete() {
   // });
 }
 
+//make sure my input is going into correct textbox tag
+let highScore = [];
+let userName = [];
+
+//Local Storage
+$(document).on("click", "#addBtn", function (e) {
+  e.preventDefault();
+  console.log("clicked");
+    highScore.push($("#userName").val() + "-" + timeRemaining);
+    localStorage.setItem("score", JSON.stringify(highScore));
+  showUserHistory();
+  loggedStorage();
+})
+
+function loggedStorage(type, message) {
+  $("displayPastScores").append(name);
+  $("displayPastScores").textContent = message;
+  $("displayPastScores").attr("id", type);
+}
+
+function showUserHistory() {
+  let name = localStorage.getItem("name");
+  let score = localStorage.getItem("score");
+}
+
+
+$(document).ready(function () {
+  console.info("ready");
+});
 
