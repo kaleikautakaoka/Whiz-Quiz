@@ -35,8 +35,9 @@ let timeRemaining = questionObject.length * 40;
 let index = 0;
 let clockId = 0;
 let allQuestions = questionObject.length;
-let correctAnswers = 0;
+let correctAnswers = 3;
 let attempts = 0;
+
 // const stopQuiz = $("#counterDiv")
 
 //Function that starts the quiz with start quiz button, calls the createQuizQuestions function and starts the timer
@@ -69,6 +70,7 @@ function createQuizQuestions() {
   $("#listOptionsId").empty();
   const letterChoice = ["A", "B", "C"]
   for (let i = 0; i < questionObject[index].choices.length; i++) {
+    console.log(index);
     /*What am I doing you ask? I took this li class with the input and label and brought it into the javascript to be revealed once the start button function is clicked*/
     $("#listOptionsId").append(` 
         <li class="list-group-item text-bg-warning">
@@ -91,6 +93,7 @@ $(document).on("click", "input", function (event) {
       $(".tally").html("Correct!");
       iterateQuestion()
     } else {
+      correctAnswers--;
       console.log("incorrect");
       $(".tally").html("Wrong");
       timeRemaining -= 20
@@ -124,40 +127,57 @@ function quizComplete() {
       <form method="POST">
       <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="userName">
-      <span id="userName" class="input-group-text"></span>
+      
       <input type="text" class="form-control" placeholder="Score" aria-label="Server"  id="score">
       <span id="score" class="input-group-text"></span>
       </div>
-      <div id="displayPastScores"></div>
+      <div id="displayPastScores">
+      <ul class"savedScore" id="savedScore">
+      </ul>
+      </div>
       <button id="addBtn" type="button" class="btn btn-warning">Submit Score</button>
       </div>
       </div>`);
-  // });
+  index = 0;
+  timeRemaining = questionObject.length * 40;
+  let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+  for (i = 0; i < highScore.length; i++){
+    $("#savedScore").append(`<div id="displayPastScores">
+      <li>${highScore[i]} </li>
+      </div>`);
+  }
 }
 
 //make sure my input is going into correct textbox tag
-let highScore = [];
-let userName = [];
+
+let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+let name = [];
 
 //Local Storage
 $(document).on("click", "#addBtn", function (e) {
   e.preventDefault();
   console.log("clicked");
-    highScore.push($("#userName").val() + "-" + timeRemaining);
-    localStorage.setItem("score", JSON.stringify(highScore));
+  highScore.push($("#score").val() + "-" + $("#userName").val());
+  localStorage.setItem("#score", JSON.stringify(highScore));
+  // userName.push($("#userName").val() + "-" );
+  // localStorage.setItem("#userName", JSON.stringify($("#userName")));
   showUserHistory();
   loggedStorage();
 })
 
 function loggedStorage(type, message) {
-  $("displayPastScores").append(name);
-  $("displayPastScores").textContent = message;
-  $("displayPastScores").attr("id", type);
+  $("#displayPastScores").append("#userName");
+  $("#displayPastScores").textContent = message;
+  $("#displayPastScores").attr("id", type);
 }
 
 function showUserHistory() {
-  let name = localStorage.getItem("name");
-  let score = localStorage.getItem("score");
+  let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+  for (i = 0; i < highScore.length; i++) {
+    $("#savedScore").append(`<div id="displayPastScores">
+      <li>${highScore[i]} </li>
+      </div>`);
+  }
 }
 
 
