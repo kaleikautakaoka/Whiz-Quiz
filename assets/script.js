@@ -71,7 +71,6 @@ function createQuizQuestions() {
   const letterChoice = ["A", "B", "C"]
   for (let i = 0; i < questionObject[index].choices.length; i++) {
     console.log(index);
-    /*What am I doing you ask? I took this li class with the input and label and brought it into the javascript to be revealed once the start button function is clicked*/
     $("#listOptionsId").append(` 
         <li class="list-group-item text-bg-warning">
         <input class="options" type="checkbox" name="options" value="${letterChoice[i]}" id="${letterChoice[i].toLowerCase()}">
@@ -148,8 +147,6 @@ function quizComplete() {
   }
 }
 
-//make sure my input is going into correct textbox tag
-
 let highScore = JSON.parse(localStorage.getItem("#score")) || [];
 let name = [];
 
@@ -179,7 +176,6 @@ function showUserHistory() {
       </div>`);
   }
 }
-
 
 $(document).ready(function () {
   console.info("ready");
