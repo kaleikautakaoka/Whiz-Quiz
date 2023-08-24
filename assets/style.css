@@ -1,38 +1,5 @@
-.body {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+:root {
+--outer-space: rgb(207, 207, 240);
+--outline:rgb(221, 162, 174);
 }
 
-.ms-5 {
-    margin-left: 50px !important;
-  }
-
-  .ms-auto {
-    margin-left:  !important;
-  }
-
-
-h1 {
-    text-decoration: none;
-    font-size: xx-large;
-}
-
-p {
-    text-decoration: none;
-    font-size: large;
-    font-weight: 800;
-}
-
-.text-center {
-    text-align: center !important;
-  }
-
-.timer {
-    font-size: large;
-    font-weight: bolder;
-    background-color: darkgreen;
-    border-radius: 20px;
-    padding: 20px;
-    margin-top: 20px;
-}

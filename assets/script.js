@@ -1,9 +1,117 @@
 //Quiz Question, options, and answer object
 const questionObject = [
   {
-    qObject: "What is a function?",
+    qObject: "What is inheritance?",
+    choices: [
+      "A class deriving from a superclass and inheriting its methods",
+      "A progrmming language",
+      "An array",
+    ],
+    answer: "A",
+  },
+  {
+    qObject: "BSF?",
     choices: [
       "A statement that performs a task",
+      "A progrmming language",
+      "Algorithym that goes through most common layer first",
+    ],
+    answer: "C",
+  },
+  {
+    qObject: "What is bianry search?",
+    choices: [
+      "A statement that performs a task",
+      "Algorythim ",
+      "An array",
+    ],
+    answer: "B",
+  },
+  {
+    qObject: "DFS?",
+    choices: [
+      "A class deriving from a superclass and inheriting its methods",
+      "A progrmming language",
+      "An array",
+    ],
+    answer: "A",
+  },
+  {
+    qObject: "What is an array?",
+    choices: [
+      "A statement that performs a task",
+      "A progrmming language",
+      "A list of stored values and elements",
+    ],
+    answer: "C",
+  },
+  {
+    qObject: "What is a class?",
+    choices: [
+      "A statement that performs a task",
+      "A template for creating objects",
+      "An array",
+    ],
+    answer: "B",
+  },
+  {
+    qObject: "What is inheritance?",
+    choices: [
+      "A class deriving from a superclass and inheriting its methods",
+      "A progrmming language",
+      "An array",
+    ],
+    answer: "A",
+  },
+  {
+    qObject: "What is an array?",
+    choices: [
+      "A statement that performs a task",
+      "A progrmming language",
+      "A list of stored values and elements",
+    ],
+    answer: "C",
+  },
+  {
+    qObject: "What is a class?",
+    choices: [
+      "A statement that performs a task",
+      "A template for creating objects",
+      "An array",
+    ],
+    answer: "B",
+  },
+  {
+    qObject: "What is inheritance?",
+    choices: [
+      "A class deriving from a superclass and inheriting its methods",
+      "A progrmming language",
+      "An array",
+    ],
+    answer: "A",
+  },
+  {
+    qObject: "What is an array?",
+    choices: [
+      "A statement that performs a task",
+      "A progrmming language",
+      "A list of stored values and elements",
+    ],
+    answer: "C",
+  },
+  {
+    qObject: "What is a class?",
+    choices: [
+      "A statement that performs a task",
+      "A template for creating objects",
+      "An array",
+    ],
+    answer: "B",
+  },
+  {
+    qObject: "What is inheritance?",
+    choices: [
+      "A class deriving from a superclass and inheriting its methods",
       "A progrmming language",
       "An array",
     ],
@@ -37,8 +145,6 @@ let clockId = 0;
 let allQuestions = questionObject.length;
 let correctAnswers = 3;
 let attempts = 0;
-
-// const stopQuiz = $("#counterDiv")
 
 //Function that starts the quiz with start quiz button, calls the createQuizQuestions function and starts the timer
 $("#submitStartBtn").on("click", runQuestions);

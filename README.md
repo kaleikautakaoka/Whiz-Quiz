@@ -15,7 +15,7 @@ Thank you for checking it out.
 <td>Whiz Quiz</td>
 </tr>
 <tr>
-<td><img src="./assets/images/Screenshot 2023-04-13 210905.png" alt="screenshot of webpage"></td>
+<td><img src="./assets/images/newWhizQuiz.png" alt="screenshot of webpage"></td>
 </tr>
 </table>
 
