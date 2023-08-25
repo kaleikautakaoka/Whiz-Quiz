@@ -149,6 +149,7 @@ let attempts = 0;
 //Function that starts the quiz with start quiz button, calls the createQuizQuestions function and starts the timer
 $("#submitStartBtn").on("click", runQuestions);
 function runQuestions() {
+  $("#submitStartBtn").hide();
   createQuizQuestions();
   clockId = setInterval(startTimer, 1000);
 }
@@ -178,7 +179,7 @@ function createQuizQuestions() {
   for (let i = 0; i < questionObject[index].choices.length; i++) {
     console.log(index);
     $("#listOptionsId").append(` 
-        <li class="list-group-item text-bg-warning">
+        <li class="list-group-item">
         <input class="options" type="checkbox" name="options" value="${letterChoice[i]}" id="${letterChoice[i].toLowerCase()}">
         <label class="form-check-labela" for="${letterChoice[i].toLowerCase()}" id="text_Option_a">${questionObject[index].choices[i]}</label>
         </li>`);
@@ -214,6 +215,9 @@ function iterateQuestion() {
     createQuizQuestions();
   } else {
     quizComplete();
+
+    $(".score-label").hide().empty();
+    $("#hiddenQuestions").hide().empty();
   }
 }
 
@@ -221,28 +225,32 @@ function iterateQuestion() {
 //function to stop quiz and display new information
 // quizComplete();
 function quizComplete() {
-  // $("#submitOptionBtn").on("click", function () {
   clearInterval(clockId);
-  $(".counter").empty();
-  $("#questions").empty();
-  $("#listOptionsId").empty();
+  $(".counter").hide();
+  $("#questions").hide();
+  
   $("#playerLocal").append(`<div class="clearfix">
       <div class="card">
-      <h2>Your Name</h2>
+      
       <form method="POST">
       <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Username" aria-label="Username" id="userName">
+      <input type="text" class="form-control" placeholder="Username" class="" aria-label="Username" id="userName">
       
       <input type="text" class="form-control" placeholder="Score" aria-label="Server"  id="score">
       <span id="score" class="input-group-text"></span>
+      
+     
       </div>
       <div id="displayPastScores">
       <ul class"savedScore" id="savedScore">
       </ul>
       </div>
-      <button id="addBtn" type="button" class="btn btn-warning">Submit Score</button>
       </div>
-      </div>`);
+      </div>
+      </form>
+      <button id="addBtn" type="button" class="btnend">Submit</button>`);
+     
+     
   index = 0;
   timeRemaining = questionObject.length * 40;
   let highScore = JSON.parse(localStorage.getItem("#score")) || [];
@@ -251,19 +259,26 @@ function quizComplete() {
       <li>${highScore[i]} </li>
       </div>`);
   }
+
+  $(".score-label").hide();
+  $(".counter").hide();
+  $("#listOptionsId").hide();
+  $("#hiddenQuestions").hide();
+  $("#questions").hide();
 }
+
 
 let highScore = JSON.parse(localStorage.getItem("#score")) || [];
 let name = [];
 
 //Local Storage
 $(document).on("click", "#addBtn", function (e) {
+  
   e.preventDefault();
   console.log("clicked");
+  
   highScore.push($("#score").val() + "-" + $("#userName").val());
   localStorage.setItem("#score", JSON.stringify(highScore));
-  // userName.push($("#userName").val() + "-" );
-  // localStorage.setItem("#userName", JSON.stringify($("#userName")));
   showUserHistory();
   loggedStorage();
 })
