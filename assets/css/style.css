@@ -1,0 +1,104 @@
+.body {
+  background-color: rgb(15, 15, 15);
+  color: rgb(241, 234, 234);
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  right: 50px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(12, 12, 12);
+  opacity: .6;
+  border: 1px solid rgb(53, 51, 51);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.endBtn {
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  left: 50px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(12, 12, 12);
+  opacity: .6;
+  border: 1px solid rgb(53, 51, 51);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.first-txt {
+  position: absolute;
+  top: 17px;
+  left: 50px;
+  color: tan;
+}
+
+.form-control {
+  position: absolute;
+  color: rgb(8, 6, 6);
+  background-color: rgb(192, 185, 185);
+  top: 200px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 150px;
+  opacity: 0.8;
+}
+
+.form-control2 {
+  position: absolute;
+  color: rgb(8, 6, 6);
+  background-color: rgb(192, 185, 185);
+  top: 200px;
+  left: 250px;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 150px;
+  opacity: 0.8;
+}
+
+h3, .counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(12, 12, 12);
+  opacity: .6;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+img {
+  position: relative;
+}
+
+.list-group {
+  color: rgb(238, 229, 229);
+  list-style: none;
+  top: 100px;
+  right: 50px;
+  margin-top: 50px;
+}
+
+/* .savedScore {
+  top: 150px;
+  margin-top: auto;
+  right: 40px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(65, 63, 63);
+  opacity: .6;
+} */

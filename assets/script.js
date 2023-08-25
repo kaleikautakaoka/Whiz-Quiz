@@ -1,4 +1,3 @@
-//Quiz Question, options, and answer object
 const questionObject = [
   {
     qObject: "What is inheritance?",
@@ -20,11 +19,7 @@ const questionObject = [
   },
   {
     qObject: "What is bianry search?",
-    choices: [
-      "A statement that performs a task",
-      "Algorythim ",
-      "An array",
-    ],
+    choices: ["A statement that performs a task", "Algorythim ", "An array"],
     answer: "B",
   },
   {
@@ -175,116 +170,121 @@ question object written to html and for loop to loop through questions
 function createQuizQuestions() {
   $("#questions").html(questionObject[index].qObject);
   $("#listOptionsId").empty();
-  const letterChoice = ["A", "B", "C"]
+  const letterChoice = ["A", "B", "C"];
   for (let i = 0; i < questionObject[index].choices.length; i++) {
     console.log(index);
     $("#listOptionsId").append(` 
         <li class="list-group-item">
-        <input class="options" type="checkbox" name="options" value="${letterChoice[i]}" id="${letterChoice[i].toLowerCase()}">
-        <label class="form-check-labela" for="${letterChoice[i].toLowerCase()}" id="text_Option_a">${questionObject[index].choices[i]}</label>
+        <input class="options" type="checkbox" name="options" value="${
+          letterChoice[i]
+        }" id="${letterChoice[i].toLowerCase()}">
+        <label class="form-check-labela" for="${letterChoice[
+          i
+        ].toLowerCase()}" id="text_Option_a">${
+      questionObject[index].choices[i]
+    }</label>
         </li>`);
   }
   $("#listOptionsId").show();
   $("#hiddenQuestions").show();
 }
-$(document).on("click", "input", function (event) {
-  const userChoice = event.target.value
 
-  console.log(userChoice)
-  console.log(event.target)
+$(document).on("click", "input", function (event) {
+  const userChoice = event.target.value;
+
+  console.log(userChoice);
+  console.log(event.target);
   if (index < questionObject.length) {
-    
     if (userChoice == questionObject[index].answer) {
       console.log("correct!");
       $(".tally").html("Correct!");
-      iterateQuestion()
+      iterateQuestion();
     } else {
       correctAnswers--;
       console.log("incorrect");
       $(".tally").html("Wrong");
-      timeRemaining -= 20
-      iterateQuestion()
+      timeRemaining -= 20;
+      iterateQuestion();
     }
   }
-  
-  
-})
+});
+
 function iterateQuestion() {
   index++;
-  if (index < questionObject.length) { 
+  if (index < questionObject.length) {
     createQuizQuestions();
   } else {
     quizComplete();
-
-    $(".score-label").hide().empty();
-    $("#hiddenQuestions").hide().empty();
+    $("#hiddenQuestions").empty().hide();
+    $("#submitEndBtn").show();
   }
 }
 
-
-//function to stop quiz and display new information
-// quizComplete();
 function quizComplete() {
   clearInterval(clockId);
-  $(".counter").hide();
-  $("#questions").hide();
-  
+
   $("#playerLocal").append(`<div class="clearfix">
       <div class="card">
       
       <form method="POST">
       <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Username" class="" aria-label="Username" id="userName">
       
-      <input type="text" class="form-control" placeholder="Score" aria-label="Server"  id="score">
-      <span id="score" class="input-group-text"></span>
+      <input type="text" class="form-control" placeholder="Username" class="userNameClass" value="" aria-label="Username" id="userName">
+
+      <div id="displayNames">
+      <ul class"savedName" id="savedNameId" value="">
+      </ul>
+      </div>
       
-     
+      <input type="text" class="form-control2" placeholder="Score" aria-label="High Score"  value="" id="score">
+      
       </div>
       <div id="displayPastScores">
-      <ul class"savedScore" id="savedScore">
+      <ul class"savedScore" id="savedScoreId" value="">
       </ul>
       </div>
       </div>
       </div>
-      </form>
-      <button id="addBtn" type="button" class="btnend">Submit</button>`);
-     
-     
+      </form>`);
+
   index = 0;
   timeRemaining = questionObject.length * 40;
   let highScore = JSON.parse(localStorage.getItem("#score")) || [];
-  for (i = 0; i < highScore.length; i++){
-    $("#savedScore").append(`<div id="displayPastScores">
+  for (i = 0; i < highScore.length; i++) {
+    $("#savedScoreId").append(`<div id="displayPastScores">
       <li>${highScore[i]} </li>
       </div>`);
   }
-
-  $(".score-label").hide();
-  $(".counter").hide();
-  $("#listOptionsId").hide();
-  $("#hiddenQuestions").hide();
-  $("#questions").hide();
+  $(".counter").empty().hide();
 }
 
+let highScore = JSON.parse(localStorage.getItem("#score").value2) || [];
+let nameStorage = JSON.parse(localStorage.getItem("#userName").value) || [];
+let value = $("#userName").val();
+let value2 = $("#score").val();
 
-let highScore = JSON.parse(localStorage.getItem("#score")) || [];
-let name = [];
+$("submitEndBtn").on("click", function (event) {
+  event.preventDefault();
 
-//Local Storage
-$(document).on("click", "#addBtn", function (e) {
-  
-  e.preventDefault();
   console.log("clicked");
-  
-  highScore.push($("#score").val() + "-" + $("#userName").val());
+
+  $("#hiddenQuestions").empty().hide();
+  $("displayCard").empty().hide();
+
+  highScore.push($("#score").val());
+  nameStorage.push($("#userName").val());
   localStorage.setItem("#score", JSON.stringify(highScore));
+  localStorage.setItem("#userName", JSON.stringify(nameStorage));
   showUserHistory();
+  showUserName();
   loggedStorage();
-})
+});
 
 function loggedStorage(type, message) {
-  $("#displayPastScores").append("#userName");
+  $("#displayNames").append("#userName");
+  $("#displayNames").textContent = message;
+  $("#displayNames").attr("id", type);
+  $("#displayPastScores").append("#score");
   $("#displayPastScores").textContent = message;
   $("#displayPastScores").attr("id", type);
 }
@@ -292,7 +292,16 @@ function loggedStorage(type, message) {
 function showUserHistory() {
   let highScore = JSON.parse(localStorage.getItem("#score")) || [];
   for (i = 0; i < highScore.length; i++) {
-    $("#savedScore").append(`<div id="displayPastScores">
+    $("#savedScoreId").append(`<div id="displayPastScores">
+      <li>${highScore[i]} </li>
+      </div>`);
+  }
+}
+
+function showUserName() {
+  let nameStorage = JSON.parse(localStorage.getItem("#userName")) || [];
+  for (i = 0; i < userName.length; i++) {
+    $("#savedNameId").append(`<div id="displayNames">
       <li>${highScore[i]} </li>
       </div>`);
   }
@@ -301,4 +310,3 @@ function showUserHistory() {
 $(document).ready(function () {
   console.info("ready");
 });
-
