@@ -25,16 +25,31 @@
   height: 100%;
 }
 
-.endBtn {
-  display: none;
+.display_card {
   position: absolute;
-  bottom: 100px;
+  top: 200px;
   left: 50px;
+  right: 50px;
   color: rgb(238, 229, 229);
   background-color: rgb(12, 12, 12);
   opacity: .6;
   border: 1px solid rgb(53, 51, 51);
   border-radius: 5px;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.endBtn {
+  width: 70%;
+  position: absolute;
+  top: 300px;
+  left: 50px;
+  color: tan;
+  background-color: tan;
+  opacity: .8;
+  border: 1px solid rgb(53, 51, 51);
+  border-radius: 10px;
   padding: 10px;
   font-size: 20px;
   font-weight: bold;
@@ -49,25 +64,30 @@
 
 .form-control {
   position: absolute;
-  color: rgb(8, 6, 6);
-  background-color: rgb(192, 185, 185);
+  text-decoration: solid;
+  color: black;
+  background-color: tan;
   top: 200px;
   border-radius: 15px;
   padding: 10px;
-  margin-bottom: 150px;
-  opacity: 0.8;
+  font-size: 15px;
+  font-weight: bold;
+  /* margin-bottom: 150px; */
+  /* opacity: 0.8; */
 }
 
 .form-control2 {
   position: absolute;
   color: rgb(8, 6, 6);
-  background-color: rgb(192, 185, 185);
+  background-color: tan;
   top: 200px;
   left: 250px;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 150px;
   opacity: 0.8;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 h3, .counter {
@@ -82,23 +102,56 @@ h3, .counter {
   font-weight: bold;
 }
 
+.highScore {
+  position: absolute;
+  top: 330px;
+  left: 20px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(12, 12, 12);
+  opacity: .6;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 img {
   position: relative;
 }
 
 .list-group {
   color: rgb(238, 229, 229);
-  list-style: none;
+  list-style: bullet;
   top: 100px;
   right: 50px;
-  margin-top: 50px;
 }
 
-/* .savedScore {
-  top: 150px;
+.list-group-bullet {
+  color: rgb(238, 229, 229);
+  list-style: bullet;
+  top: 100px;
+  right: 50px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(12, 12, 12);
+  opacity: .6;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.listClass {
+  top: 400px;
   margin-top: auto;
   right: 40px;
   color: rgb(238, 229, 229);
   background-color: rgb(65, 63, 63);
   opacity: .6;
-} */
+}
+
+.userNameClass {
+  top: 400px;
+  margin-top: auto;
+  right: 40px;
+  color: rgb(238, 229, 229);
+  background-color: rgb(65, 63, 63);
+  opacity: .6;
+}

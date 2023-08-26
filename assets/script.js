@@ -31,105 +31,105 @@ const questionObject = [
     ],
     answer: "A",
   },
-  {
-    qObject: "What is an array?",
-    choices: [
-      "A statement that performs a task",
-      "A progrmming language",
-      "A list of stored values and elements",
-    ],
-    answer: "C",
-  },
-  {
-    qObject: "What is a class?",
-    choices: [
-      "A statement that performs a task",
-      "A template for creating objects",
-      "An array",
-    ],
-    answer: "B",
-  },
-  {
-    qObject: "What is inheritance?",
-    choices: [
-      "A class deriving from a superclass and inheriting its methods",
-      "A progrmming language",
-      "An array",
-    ],
-    answer: "A",
-  },
-  {
-    qObject: "What is an array?",
-    choices: [
-      "A statement that performs a task",
-      "A progrmming language",
-      "A list of stored values and elements",
-    ],
-    answer: "C",
-  },
-  {
-    qObject: "What is a class?",
-    choices: [
-      "A statement that performs a task",
-      "A template for creating objects",
-      "An array",
-    ],
-    answer: "B",
-  },
-  {
-    qObject: "What is inheritance?",
-    choices: [
-      "A class deriving from a superclass and inheriting its methods",
-      "A progrmming language",
-      "An array",
-    ],
-    answer: "A",
-  },
-  {
-    qObject: "What is an array?",
-    choices: [
-      "A statement that performs a task",
-      "A progrmming language",
-      "A list of stored values and elements",
-    ],
-    answer: "C",
-  },
-  {
-    qObject: "What is a class?",
-    choices: [
-      "A statement that performs a task",
-      "A template for creating objects",
-      "An array",
-    ],
-    answer: "B",
-  },
-  {
-    qObject: "What is inheritance?",
-    choices: [
-      "A class deriving from a superclass and inheriting its methods",
-      "A progrmming language",
-      "An array",
-    ],
-    answer: "A",
-  },
-  {
-    qObject: "What is an array?",
-    choices: [
-      "A statement that performs a task",
-      "A progrmming language",
-      "A list of stored values and elements",
-    ],
-    answer: "C",
-  },
-  {
-    qObject: "What is a class?",
-    choices: [
-      "A statement that performs a task",
-      "A template for creating objects",
-      "An array",
-    ],
-    answer: "B",
-  },
+  // {
+  //   qObject: "What is an array?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A progrmming language",
+  //     "A list of stored values and elements",
+  //   ],
+  //   answer: "C",
+  // },
+  // {
+  //   qObject: "What is a class?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A template for creating objects",
+  //     "An array",
+  //   ],
+  //   answer: "B",
+  // },
+  // {
+  //   qObject: "What is inheritance?",
+  //   choices: [
+  //     "A class deriving from a superclass and inheriting its methods",
+  //     "A progrmming language",
+  //     "An array",
+  //   ],
+  //   answer: "A",
+  // },
+  // {
+  //   qObject: "What is an array?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A progrmming language",
+  //     "A list of stored values and elements",
+  //   ],
+  //   answer: "C",
+  // },
+  // {
+  //   qObject: "What is a class?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A template for creating objects",
+  //     "An array",
+  //   ],
+  //   answer: "B",
+  // },
+  // {
+  //   qObject: "What is inheritance?",
+  //   choices: [
+  //     "A class deriving from a superclass and inheriting its methods",
+  //     "A progrmming language",
+  //     "An array",
+  //   ],
+  //   answer: "A",
+  // },
+  // {
+  //   qObject: "What is an array?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A progrmming language",
+  //     "A list of stored values and elements",
+  //   ],
+  //   answer: "C",
+  // },
+  // {
+  //   qObject: "What is a class?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A template for creating objects",
+  //     "An array",
+  //   ],
+  //   answer: "B",
+  // },
+  // {
+  //   qObject: "What is inheritance?",
+  //   choices: [
+  //     "A class deriving from a superclass and inheriting its methods",
+  //     "A progrmming language",
+  //     "An array",
+  //   ],
+  //   answer: "A",
+  // },
+  // {
+  //   qObject: "What is an array?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A progrmming language",
+  //     "A list of stored values and elements",
+  //   ],
+  //   answer: "C",
+  // },
+  // {
+  //   qObject: "What is a class?",
+  //   choices: [
+  //     "A statement that performs a task",
+  //     "A template for creating objects",
+  //     "An array",
+  //   ],
+  //   answer: "B",
+  // },
 ];
 
 /*Variables 
@@ -215,47 +215,45 @@ function iterateQuestion() {
     createQuizQuestions();
   } else {
     quizComplete();
-    $("#hiddenQuestions").empty().hide();
-    $("#submitEndBtn").show();
   }
 }
 
 function quizComplete() {
-  clearInterval(clockId);
-
   $("#playerLocal").append(`<div class="clearfix">
-      <div class="card">
-      
-      <form method="POST">
-      <div class="input-group mb-3">
-      
-      <input type="text" class="form-control" placeholder="Username" class="userNameClass" value="" aria-label="Username" id="userName">
+  <div class="card">
+  
+  <form method="POST">
+  <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Username" class="userNameClass" aria-label="Username" id="userName">
+  
+  <input type="text" class="form-control2" placeholder="Score" aria-label="Server"  id="score">
+  <span id="score" class="input-group-text"></span>
+  
+ 
+  </div>
+  <div id="displayPastScores">
+  <ul class"savedScore" id="savedScore">
+  </ul>
+  </div>
+  </div>
+  <input type="text" id="submitEndBtn" type="submit" class="endBtn" aria-label="Submit Score" value="" placeholder="Submit Score">
+  
+  </form>
+  `);
 
-      <div id="displayNames">
-      <ul class"savedName" id="savedNameId" value="">
-      </ul>
-      </div>
-      
-      <input type="text" class="form-control2" placeholder="Score" aria-label="High Score"  value="" id="score">
-      
-      </div>
-      <div id="displayPastScores">
-      <ul class"savedScore" id="savedScoreId" value="">
-      </ul>
-      </div>
-      </div>
-      </div>
-      </form>`);
+  //event target.value is getting the value of my button as true or false because the createQuizQuestions function is still running
 
   index = 0;
   timeRemaining = questionObject.length * 40;
   let highScore = JSON.parse(localStorage.getItem("#score")) || [];
   for (i = 0; i < highScore.length; i++) {
-    $("#savedScoreId").append(`<div id="displayPastScores">
+    $("#savedScore").append(`<div id="displayPastScores">
       <li>${highScore[i]} </li>
       </div>`);
   }
   $(".counter").empty().hide();
+  $("#hideCard").empty().hide();
+  $("#submitEndBtn").show();
 }
 
 let highScore = JSON.parse(localStorage.getItem("#score").value2) || [];
@@ -263,48 +261,60 @@ let nameStorage = JSON.parse(localStorage.getItem("#userName").value) || [];
 let value = $("#userName").val();
 let value2 = $("#score").val();
 
-$("submitEndBtn").on("click", function (event) {
+$("#submitEndBtn").on("click", function (event) {
   event.preventDefault();
 
   console.log("clicked");
-
-  $("#hiddenQuestions").empty().hide();
-  $("displayCard").empty().hide();
-
-  highScore.push($("#score").val());
-  nameStorage.push($("#userName").val());
+  highScore.push($("#score").val() + "-" + $("#userName").val());
   localStorage.setItem("#score", JSON.stringify(highScore));
-  localStorage.setItem("#userName", JSON.stringify(nameStorage));
   showUserHistory();
-  showUserName();
   loggedStorage();
+
+  // highScore.push($("#score").val());
+  // nameStorage.push($("#userName").val());
+  // localStorage.setItem("#score", JSON.stringify(highScore));
+  // localStorage.setItem("#userName", JSON.stringify(nameStorage));
+  // showUserHistory();
+  // showUserName();
+  // loggedStorage();
 });
 
 function loggedStorage(type, message) {
-  $("#displayNames").append("#userName");
-  $("#displayNames").textContent = message;
-  $("#displayNames").attr("id", type);
-  $("#displayPastScores").append("#score");
+  $("#displayPastScores").append("#userName");
   $("#displayPastScores").textContent = message;
   $("#displayPastScores").attr("id", type);
+
+  // $("#displayNames").append("#userName");
+  // $("#displayNames").textContent = message;
+  // $("#displayNames").attr("id", type);
+  // $("#displayPastScores").append("#score");
+  // $("#displayPastScores").textContent = message;
+  // $("#displayPastScores").attr("id", type);
 }
 
 function showUserHistory() {
   let highScore = JSON.parse(localStorage.getItem("#score")) || [];
   for (i = 0; i < highScore.length; i++) {
-    $("#savedScoreId").append(`<div id="displayPastScores">
+    $("#savedScore").append(`<div id="displayPastScores">
       <li>${highScore[i]} </li>
       </div>`);
   }
 }
 
 function showUserName() {
-  let nameStorage = JSON.parse(localStorage.getItem("#userName")) || [];
-  for (i = 0; i < userName.length; i++) {
-    $("#savedNameId").append(`<div id="displayNames">
+  let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+  for (i = 0; i < highScore.length; i++) {
+    $("#savedScore").append(`<div id="displayPastScores">
       <li>${highScore[i]} </li>
       </div>`);
   }
+
+  // let nameStorage = JSON.parse(localStorage.getItem("#userName")) || [];
+  // for (i = 0; i < userName.length; i++) {
+  //   $("#savedNameId").append(`<div id="displayNames">
+  //     <li>${highScore[i]} </li>
+  //     </div>`);
+  // }
 }
 
 $(document).ready(function () {

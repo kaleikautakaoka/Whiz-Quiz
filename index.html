@@ -17,33 +17,26 @@
       <p class="h6 text">A Javascript Coding Quiz</p>
       <div id="playerLocal"></div>
       <h3 class="counter" data-target=""></h3>
-  </div>
-      <div class="card-body-question">
-        <div id="hiddenQuestions" class="display_card btn">
-          <h5 id="questions"></h5>
-          <ul class="list-group" id="listOptionsId">
-          </ul>
-          <p class="score-label">Result: <span class="tally"></span></p>
-        </div>
-        </div>
-      </div>
-      <div id="cardBody">
-        <button id="submitStartBtn" type="submit" class="btn">Start Quiz</button>
-       </div>
-       
-        <button id="submitEndBtn" type="submit" class="endBtn">Submit Score</button>
-
-        </div>
-        
-      
-
  
+  <div class="card-body-question" id="hideCard">
+    <div id="hiddenQuestions" class="display_card">
+      <h5 id="questions"></h5>
+      <ul class="list-group" id="listOptionsId">
+      </ul>
+      <p class="score-label">Result: <span class="tally"></span></p>
+    </div>
+  </div>
+  </div>
+  <div id="cardBody">
+    <button id="submitStartBtn" type="submit" class="btn">Start Quiz</button>
+  </div>
+</div>
+
+  <div id="submitCard">
+    <input type = "button" id="submitEndBtn" type="submit" class="endBtn" aria-placeholder="Submit Score">
+  </div>
   </div>
 
-  </div>
-  </div>
-  </div>
- 
   <!--Status bar for future development-->
   <!-- <div class="progress">
     <div class="progress-bar " role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25"
