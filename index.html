@@ -11,7 +11,7 @@
 
 <body class="body ms-auto">
 
-  <div class="card-header ">
+  <div class="card-header">
     <img src="./assets/images/clocktest.jpg" class="img-fluid" alt="Clock background image">
     <h2 class="first-txt">Whiz Quiz</p>
       <p class="h6 text">A Javascript Coding Quiz</p>
@@ -20,7 +20,7 @@
  
   <div class="card-body-question" id="hideCard">
     <div id="hiddenQuestions" class="display_card">
-      <h5 id="questions"></h5>
+      <h5 id="questions" class="questionsClass"></h5>
       <ul class="list-group" id="listOptionsId">
       </ul>
       <p class="score-label">Result: <span class="tally"></span></p>
@@ -31,12 +31,43 @@
     <button id="submitStartBtn" type="submit" class="btn">Start Quiz</button>
   </div>
 </div>
-
-  <div id="submitCard">
-    <input type = "button" id="submitEndBtn" type="submit" class="endBtn" aria-placeholder="Submit Score">
-  </div>
   </div>
 
+  <div class="card">
+ 
+    <form method="POST">
+
+    <div class="input-group mb-3"> 
+
+    <input type="text" class="form-control" placeholder="Username" class="userNameClass" aria-label="Username" id="userName">
+    <span id="nameSpan" class="input-group-text"></span>
+    
+    <input type="text" class="form-control2" placeholder="Score" aria-label="Server"  id="score">
+    <span id="scoreSpan" class="input-group-text"></span>
+    
+   
+    </div>
+
+    <div id="displayNames">
+
+      <ul class="savedName" id="savedName">
+        <li>
+          <span id="nameSpanId" class="savedNameSpan"></span>
+        </li>
+      </ul>
+      </div>
+
+    <div id="displayPastScores">
+    <ul class="savedScore" id="savedScore">
+      <li>
+        <span id="scoreSpanId" class="savedScoreSpan"></span>
+      </li>
+    </ul>
+    </div>
+
+    <div id="submitScoreBtnDiv">
+    <input type="text" id="submitEndBtn" type="submit" class="endBtn" aria-label="Submit Score" value="" placeholder="Submit Score">
+    </div>
   <!--Status bar for future development-->
   <!-- <div class="progress">
     <div class="progress-bar " role="progressbar" aria-label="Success example" style="width: 25%" aria-valuenow="25"

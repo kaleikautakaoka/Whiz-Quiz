@@ -163,6 +163,11 @@ let currentQuestion = {};
 
 //Function that hides questions div until ready
 $("#hiddenQuestions").hide();
+$("#submitEndBtn").hide();
+$("#userName").hide();
+$("#score").hide();
+$("#savedScore").hide();
+$("#savedName").hide();
 
 /*Function that is attached to the first html element buttton. Once clicked .show() items are revealed
 question object written to html and for loop to loop through questions
@@ -220,25 +225,7 @@ function iterateQuestion() {
 
 function quizComplete() {
   $("#playerLocal").append(`<div class="clearfix">
-  <div class="card">
   
-  <form method="POST">
-  <div class="input-group mb-3">
-  <input type="text" class="form-control" placeholder="Username" class="userNameClass" aria-label="Username" id="userName">
-  
-  <input type="text" class="form-control2" placeholder="Score" aria-label="Server"  id="score">
-  <span id="score" class="input-group-text"></span>
-  
- 
-  </div>
-  <div id="displayPastScores">
-  <ul class"savedScore" id="savedScore">
-  </ul>
-  </div>
-  </div>
-  <input type="text" id="submitEndBtn" type="submit" class="endBtn" aria-label="Submit Score" value="" placeholder="Submit Score">
-  
-  </form>
   `);
 
   //event target.value is getting the value of my button as true or false because the createQuizQuestions function is still running
@@ -254,10 +241,14 @@ function quizComplete() {
   $(".counter").empty().hide();
   $("#hideCard").empty().hide();
   $("#submitEndBtn").show();
+  $("#userName").show();
+  $("#score").show();
+  $("#savedScore").show();
+$("#savedName").show();
 }
 
-let highScore = JSON.parse(localStorage.getItem("#score").value2) || [];
-let nameStorage = JSON.parse(localStorage.getItem("#userName").value) || [];
+let highScore = JSON.parse(localStorage.getItem("#score").val()) || [];
+let nameStorage = JSON.parse(localStorage.getItem("#userName").val()) || [];
 let value = $("#userName").val();
 let value2 = $("#score").val();
 
@@ -302,10 +293,10 @@ function showUserHistory() {
 }
 
 function showUserName() {
-  let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+  let highScore = JSON.parse(localStorage.getItem("#userName")) || [];
   for (i = 0; i < highScore.length; i++) {
-    $("#savedScore").append(`<div id="displayPastScores">
-      <li>${highScore[i]} </li>
+    $("#savedName").append(`<div id="displayNames">
+      <li></li>
       </div>`);
   }
 
