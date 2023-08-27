@@ -247,8 +247,8 @@ function quizComplete() {
 $("#savedName").show();
 }
 
-let highScore = JSON.parse(localStorage.getItem("#score").val()) || [];
-let nameStorage = JSON.parse(localStorage.getItem("#userName").val()) || [];
+let highScore = JSON.parse(localStorage.getItem("#score")) || [];
+let nameStorage = JSON.parse(localStorage.getItem("#userName")) || [];
 let value = $("#userName").val();
 let value2 = $("#score").val();
 

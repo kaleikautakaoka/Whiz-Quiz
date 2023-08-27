@@ -33,7 +33,7 @@
   right: 100px;
   color: rgb(238, 229, 229);
   background-color: rgb(12, 12, 12);
-  opacity: .6;
+  opacity: .8;
   border: 1px solid rgb(53, 51, 51);
   border-radius: 5px;
   padding: 20px;
@@ -43,7 +43,8 @@
 }
 
 .endBtn {
-  width: 11%;
+  width: 50%;
+  height: 50px;
   position: absolute;
   top: 300px;
   left: 500px;
@@ -69,7 +70,7 @@
   text-decoration: solid;
   color: rgb(8, 6, 6);
   background-color: tan;
-  left: 40px;
+  left: 350px;
   top: 220px;
   border-radius: 15px;
   padding: 10px;
@@ -83,7 +84,7 @@
   color: rgb(8, 6, 6);
   background-color: tan;
   top: 220px;
-  left: 280px;
+  right: 430px;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 150px;
